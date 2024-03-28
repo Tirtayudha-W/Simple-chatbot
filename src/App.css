@@ -1,38 +1,93 @@
+/* App.css */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  position: relative; /* Add position relative to the parent container */
 }
 
-.App-link {
-  color: #61dafb;
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  width: 300px;
+  height: 400px;
+  border: 4px solid rgb(166, 0, 255);
+  overflow-y: scroll;
+  padding: 20px;
+  position: relative;
+  border-radius: 20px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Add background image to the border */
+.chat-window::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180%;
+  height: 150%;
+  background-image: url('assets/motiv2.jpg'); 
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.chat-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 70px;
+  background-color: #deb41e;
+  color: rgb(255, 255, 255);
+  border-radius: 60px; 
+  border-bottom: 4px solid rgb(166, 0, 255);
+}
+
+.message {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.user {
+  background-color: #6ac2e7;
+  align-self: flex-end; /* Align user messages to the right */
+  width: auto; /* Adjust width as needed */
+}
+
+.bot {
+  background-color: #af8ef6;
+  align-self: flex-start; /* Align bot messages to the left */
+  width: auto; /* Adjust width as needed */
+}
+
+.input-container {
+  margin-top: 20px;
+  font-weight: bold;
+} 
+
+input {
+  padding: 8px;
+  border: 4px solid #a72edf;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+button {
+  padding: 8px 25px;
+  font-weight: bold;
+  background-color: #deb41e;
+  border-bottom: 4px solid rgb(166, 0, 255);
+  color: rgb(222, 246, 246);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7cf744;
 }
